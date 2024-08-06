@@ -100,8 +100,6 @@ const addComment = async () => {
     const updatedPost = {
         name: post.name,
         text: post.text,
-        createdAt: post.createdAt,
-        comments: post.comments ? post.comments.concat(commentData) : [commentData]
     };
 
     await axios.put(`${API_URL}/${postId}`, updatedPost);
