@@ -106,8 +106,13 @@ const addComment = async () => {
     };
 
     const updatedPost = {
+<<<<<<< HEAD
         ...post,
         comments: post.comments ? post.comments.concat(commentData) : [commentData]
+=======
+        name: post.name,
+        text: post.text,
+>>>>>>> d000114f1686b8917909dfaa5cfdf04b02e7edd3
     };
 
     await axios.put(`${API_URL}/${postId}`, updatedPost);
