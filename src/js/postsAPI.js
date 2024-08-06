@@ -66,7 +66,7 @@ const updatePost = async () => {
     const updatedPost = {
         name: name,
         text: text,
-        createdAt: new Date().toISOString()
+        
     };
 
     await axios.put(`${API_URL}/${id}`, updatedPost);
