@@ -1,159 +1,176 @@
 body {
-    font-family: 'Roboto';
-    padding-bottom: 120px;
+  font-family: "Roboto";
+  padding-bottom: 120px;
 }
 
 .container {
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .title {
-    text-align: center;
+  text-align: center;
 }
 
 .posts__form {
-    background-color: lightslategray;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    height: 120px;
-    display: flex;
-    padding-bottom: 50px;
-    justify-content: center;
-    align-items: center;
+  background-color: lightslategray;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 120px;
+  display: flex;
+  padding-bottom: 50px;
+  justify-content: center;
+  align-items: center;
 }
 
 .posts__form .container {
-    text-align: center;
+  text-align: center;
 }
 
 .form__title {
-    color: white;
-    font-size: 24px;
+  color: white;
+  font-size: 24px;
 }
 
 .form__input {
-    width: 300px;
-    height: 30px;
-    border-radius: 10px;
-    color: black;
-    border: none;
-    padding-left: 10px;
-    margin-bottom: 10px;
+  width: 300px;
+  height: 30px;
+  border-radius: 10px;
+  color: black;
+  border: none;
+  padding-left: 10px;
+  margin-bottom: 10px;
 }
 
 .submit__post {
-    width: 300px;
-    height: 30px;
-    border-radius: 10px;
-    color: black;
-    border: none;
-    background-color: #333;
-    color: white;
-    cursor: pointer;
+  width: 300px;
+  height: 30px;
+  border-radius: 10px;
+  color: black;
+  border: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
 }
 
 .submit__post:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .posts__list {
-    display: block;
-    padding: 0;
+  display: block;
+  padding: 0;
 }
 
 .posts__item {
-    background-color: white;
-    border: 5px solid gray;
-    border-radius: 10px;
-    display: block;
-    padding-left: 50px;
-    padding-bottom: 10px;
-    position: relative;
-    margin-top: 30px;
+  background-color: white;
+  border: 5px solid gray;
+  border-radius: 10px;
+  display: block;
+  padding-left: 50px;
+  padding-bottom: 10px;
+  position: relative;
+  margin-top: 30px;
 }
 
 .delete__posts {
-    background: none;
-    border: none;
-    position: absolute;
-    top: 15px;
-    right: 15px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
 .comments__section {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #ddd;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
 }
 
 .comment__item {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    background-color: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background-color: #f9f9f9;
 }
 
 .comment__name {
-    font-weight: bold;
-    margin-bottom: 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .comment__text {
-    font-size: 14px;
-    color: #333;
-}
-
-.comment__form {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #fff;
+  font-size: 14px;
+  color: #333;
 }
 
 .form__title {
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: #333;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
 }
 
 .form__input {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.add__comment, .cancel__comment {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-right: 10px;
+.add,
+.cancel {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
 }
 
-.add__comment {
-    background-color: #28a745;
-    color: white;
+.add {
+  background-color: #28a745;
+  color: white;
 }
 
-.add__comment:hover {
-    background-color: #218838;
+.cancel {
+  background-color: #dc3545;
+  color: white;
 }
 
-.cancel__comment {
-    background-color: #dc3545;
-    color: white;
+.edit__form {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-top: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
-.cancel__comment:hover {
-    background-color: #c82333;
+.edit__form .container {
+  text-align: center;
+}
+
+.modal__title {
+  color: white;
+}
+
+.comment__form {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-top: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.comment__form .container {
+  text-align: center;
 }
