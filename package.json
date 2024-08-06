@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url /mge",
+    "build": "parcel build src/index.html --public-url /posts-project",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build",
     "server": "npx json-server posts.json"
