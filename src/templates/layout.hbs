@@ -3,7 +3,17 @@
   <li class="posts__item">
     <h4 class="item__name">{{name}}</h4>
     <p class="item__text">{{text}}</p>
-    <p class="item__text">{{id}}</p>
+    <p class="item__date">{{createdAt}}</p> <!-- Используем поле даты создания -->
+
+    <div class="tags__section">
+      {{#if tags}}
+        {{#each tags}}
+          <span class="tag">#{{this}}</span>
+        {{/each}}
+      {{else}}
+        <span class="no-tags">No tags</span>
+      {{/if}}
+    </div>
 
     <div class="comments__section">
       {{#each comments}}

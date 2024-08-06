@@ -19,7 +19,7 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
-  height: 120px;
+  height: 150px; /* Увеличен для места под хештеги */
   display: flex;
   padding-bottom: 50px;
   justify-content: center;
@@ -112,15 +112,6 @@ body {
   margin-bottom: 10px;
   font-size: 18px;
   color: #333;
-}
-
-.form__input {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
 .add,

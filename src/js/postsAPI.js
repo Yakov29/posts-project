@@ -6,6 +6,7 @@ const API_URL = 'https://669a39809ba098ed61fed14b.mockapi.io/fruits/posts';
 const postsList = document.querySelector('.posts__list');
 const nameInput = document.querySelector('input[name="name"]');
 const textInput = document.querySelector('input[name="text"]');
+const hashtagsInput = document.querySelector('input[name="hashtags"]');
 const submitButton = document.querySelector('.submit__post');
 const commentForm = document.querySelector('.comment__form');
 const commentNameInput = document.querySelector('input[name="comment-name"]');
@@ -14,6 +15,7 @@ const commentIdInput = document.querySelector('input[name="comment-id"]');
 const editForm = document.querySelector('.edit__form');
 const editNameInput = document.querySelector('input[name="edit-name"]');
 const editTextInput = document.querySelector('input[name="edit-text"]');
+const editHashtagsInput = document.querySelector('input[name="edit-hashtags"]');
 const editIdInput = document.querySelector('input[name="edit-id"]');
 const updateButton = document.querySelector('.update__post');
 const cancelEditButton = document.querySelector('.cancel__edit');
@@ -37,11 +39,14 @@ const getPosts = async () => {
 const addPost = async () => {
     const name = nameInput.value;
     const text = textInput.value;
+    const hashtags = hashtagsInput.value.split(',').map(tag => tag.trim()); // Разделяем и очищаем хештеги
+    const createdAt = new Date().toISOString(); // Создаем дату
 
-    await axios.post(API_URL, { name, text });
+    await axios.post(API_URL, { name, text, tags: hashtags, createdAt });
 
     nameInput.value = '';
     textInput.value = '';
+    hashtagsInput.value = '';
 
     getPosts();
 };
@@ -54,6 +59,7 @@ const deletePost = async (id) => {
 const showEditForm = async (post) => {
     editNameInput.value = post.name;
     editTextInput.value = post.text;
+    editHashtagsInput.value = post.tags ? post.tags.join(', ') : ''; // Преобразуем массив хештегов в строку
     editIdInput.value = post.id;
     editForm.style.display = 'block';
 };
@@ -61,18 +67,20 @@ const showEditForm = async (post) => {
 const updatePost = async () => {
     const name = editNameInput.value;
     const text = editTextInput.value;
+    const hashtags = editHashtagsInput.value.split(',').map(tag => tag.trim()); // Разделяем и очищаем хештеги
     const id = editIdInput.value;
 
     const updatedPost = {
-        name: name,
-        text: text,
-        
+        name,
+        text,
+        tags: hashtags,
     };
 
     await axios.put(`${API_URL}/${id}`, updatedPost);
 
     editNameInput.value = '';
     editTextInput.value = '';
+    editHashtagsInput.value = '';
     editIdInput.value = '';
     editForm.style.display = 'none';
 
@@ -93,14 +101,12 @@ const addComment = async () => {
     const post = postResponse.data;
 
     const commentData = {
-        name: name,
-        text: text
+        name,
+        text
     };
 
     const updatedPost = {
-        name: post.name,
-        text: post.text,
-        createdAt: post.createdAt,
+        ...post,
         comments: post.comments ? post.comments.concat(commentData) : [commentData]
     };
 
@@ -117,6 +123,7 @@ const addComment = async () => {
 const cancelEdit = () => {
     editNameInput.value = '';
     editTextInput.value = '';
+    editHashtagsInput.value = '';
     editIdInput.value = '';
     editForm.style.display = 'none';
 };
