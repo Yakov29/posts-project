@@ -724,7 +724,7 @@ addCommentButton.addEventListener("click", addComment);
 cancelCommentButton.addEventListener("click", cancelComment);
 getPosts();
 
-},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../templates/layout.hbs":"llLsC"}],"jo6P5":[function(require,module,exports) {
+},{"axios":"jo6P5","../templates/layout.hbs":"llLsC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _axiosJsDefault.default));
