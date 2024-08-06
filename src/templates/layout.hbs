@@ -1,0 +1,23 @@
+<ul class="posts__list">
+  {{#each posts}}
+  <li class="posts__item">
+    <h4 class="item__name">{{name}}</h4>
+    <p class="item__text">{{text}}</p>
+    <p class="item__text">{{id}}</p>
+
+    <!-- Отображение комментариев -->
+    <div class="comments__section">
+      {{#each comments}}
+      <div class="comment__item">
+        <p class="comment__name">{{name}}</p>
+        <p class="comment__text">{{text}}</p>
+      </div>
+      {{/each}}
+    </div>
+
+    <button class="edit__post" data-id="{{id}}">✏️</button>
+    <button class="delete__posts" data-id="{{id}}">❌</button>
+    <button class="comment__posts" data-id="{{id}}">💬</button>
+  </li>
+  {{/each}}
+</ul>

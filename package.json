@@ -2,15 +2,21 @@
   "name": "posts-project",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://yakov29.github.io/posts-project/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url /mge",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build",
     "server": "npx json-server posts.json"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.2",
+    "gh-pages": "^6.1.1",
+    "handlebars": "^4.7.8",
     "json-server": "^1.0.0-beta.1",
     "parcel": "^2.12.0"
   }
